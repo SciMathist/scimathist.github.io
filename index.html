@@ -9,9 +9,31 @@
     <script src="js/uikit.js"></script>
     <script src="js/uikit-icons.js"></script>
 
-    <title>Portfolio</title>
+    <style>
+        .background-text {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 150px;
+            color: rgba(211, 211, 211, 0.1);
+            z-index: -1;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+
+    <title>Saptadip Saha's Portfolio</title>
 </head>
 <body>
+<!-- Background Text -->
+<div class="background-text">I'm SciMathist</div>
+
 <!-- Navigation Bar -->
     <nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-visible@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     
