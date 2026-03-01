@@ -2,9 +2,9 @@ name: Deploy Distill Blog to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [distill-blog]
   pull_request:
-    branches: [main]
+    branches: [distill-blog]
   workflow_dispatch:
 
 permissions:
