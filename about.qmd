@@ -1,0 +1,27 @@
+---
+title: "About"
+---
+
+This blog is dedicated to clear, interactive explanations of machine learning research, built with [Quarto](https://quarto.org/) and styled exactly like [Distill.pub](https://distill.pub).
+
+## Why Distill-style?
+
+> "We believe that interactive, well-explained articles can make complex ideas more accessible."
+
+Distill.pub set the gold standard for ML research communication:
+margin notes, hover citations, interactive diagrams, and beautiful typography.
+
+## How it's built
+
+This blog uses:
+
+- **Quarto** for authoring (`.qmd` files, notebooks)
+- **GitHub Actions** for automated CI/CD
+- **GitHub Pages** for hosting
+- **Utterances** for comments (GitHub Issues)
+- **Observable JS** for interactive diagrams
+- **Plotly** for interactive charts
+
+## Submitting a Post
+
+Open a pull request to the repository. Each post is a `.qmd` file in the `posts/` directory.

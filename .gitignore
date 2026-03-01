@@ -1,0 +1,16 @@
+/.quarto/
+/docs/
+_freeze/
+.jupyter_cache/
+__pycache__/
+*.pyc
+.DS_Store
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+node_modules/
+*.egg-info/
+dist/
+
+**/*.quarto_ipynb

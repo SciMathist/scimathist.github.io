@@ -1,0 +1,12 @@
+---
+title: "Archive"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  fields: [date, title, author, categories, reading-time]
+  sort-ui: [date, title]
+  filter-ui: true
+page-layout: full
+title-block-banner: false
+---

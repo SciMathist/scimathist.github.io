@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: ""
+  site-url: "https://YOUR_USERNAME.github.io/YOUR_REPO"
+  description: "A research blog"
+  favicon: styles/favicon.ico
+
+  navbar:
+    background: white
+    foreground: "#333"
+    border: false
+    left:
+      - href: index.qmd
+        text: "Distill"
+    right:
+      - href: about.qmd
+        text: About
+      - href: archive.qmd
+        text: Archive
+      - icon: rss
+        href: index.xml
+
+  page-footer:
+    center: |
+      [Distill](/) is dedicated to clear explanations of machine learning ·
+      [About](about.qmd) · [Submit](submit.qmd) · [RSS](index.xml) ·
+      [GitHub](https://github.com/YOUR_USERNAME)
+
+  search:
+    location: navbar
+    type: overlay
+
+  comments:
+    utterances:
+      repo: YOUR_USERNAME/YOUR_REPO
+
+format:
+  html:
+    theme: none
+    css:
+      - styles/distill.css
+      - styles/syntax.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    toc-title: "Table of Contents"
+    citations-hover: true
+    footnotes-hover: true
+    reference-location: margin
+    fig-cap-location: margin
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    code-overflow: wrap
+    fig-responsive: true
+    link-external-icon: false
+    link-external-newwindow: true
+    html-math-method: katex
+    include-in-header:
+      - styles/meta.html
+
+execute:
+  freeze: auto
+  cache: true
+
+bibliography: references.bib

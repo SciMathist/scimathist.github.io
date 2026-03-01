@@ -1,0 +1,14 @@
+/* Distill-style syntax highlighting */
+.sourceCode .kw { color: #007020; font-weight: bold; }  /* keyword */
+.sourceCode .dt { color: #902000; }                      /* datatype */
+.sourceCode .dv { color: #40a070; }                      /* decimal val */
+.sourceCode .bn { color: #40a070; }                      /* base N */
+.sourceCode .fl { color: #40a070; }                      /* float */
+.sourceCode .ch { color: #4070a0; }                      /* char */
+.sourceCode .st { color: #4070a0; }                      /* string */
+.sourceCode .co { color: #60a0b0; font-style: italic; }  /* comment */
+.sourceCode .ot { color: #007020; }                      /* other */
+.sourceCode .al { color: #ff0000; font-weight: bold; }   /* alert */
+.sourceCode .fu { color: #06287e; }                      /* function */
+.sourceCode .re { }                                       /* region */
+.sourceCode .er { color: #ff0000; font-weight: bold; }   /* error */

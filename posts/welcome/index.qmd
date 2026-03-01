@@ -1,0 +1,217 @@
+---
+title: "Welcome to Distill"
+description: "A demonstration of all Distill-style features: margin notes, citations, interactive charts, equations, and more."
+author:
+  - name: "Your Name"
+    url: https://yoursite.com
+    affiliation: Your Institution
+    affiliation-url: https://yourinstitution.edu
+date: 2024-03-01
+categories: [tutorial, introduction]
+bibliography: ../../references.bib
+citation: true
+image: preview.png
+draft: false
+jupyter: distill-blog 
+---
+
+## Introduction
+
+This post demonstrates every feature available in this Distill-style blog. It covers typography, margin notes, citations, math, interactive charts, and code.
+
+::: {.aside}
+**Margin Note:** This is a margin note — it floats to the right on desktop and collapses inline on mobile, just like distill.pub.
+:::
+
+As shown in the original Distill journal, the key to great ML communication is combining beautiful typography with interactive explanations. See [@vaswani2017attention] for a canonical example of transformer architecture.
+
+---
+
+## Typography
+
+The body uses **Georgia** serif for maximum readability. Headers use system sans-serif. Code uses **JetBrains Mono**.
+
+You can write *italic text*, **bold text**, and `inline code` naturally.
+
+> "The most important thing is that readers can understand the ideas." — Distill.pub
+
+---
+
+## Math & Equations
+
+Inline math: $f(x) = \sigma(Wx + b)$
+
+Block equations:
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+The transformer attention mechanism [@vaswani2017attention] computes:
+
+$$
+\mathcal{L} = -\sum_{i} y_i \log(\hat{y}_i)
+$$
+
+---
+
+## Code Blocks
+
+Python:
+
+```python
+import torch
+import torch.nn as nn
+
+class SelfAttention(nn.Module):
+    def __init__(self, embed_dim, num_heads):
+        super().__init__()
+        self.attn = nn.MultiheadAttention(embed_dim, num_heads)
+
+    def forward(self, x):
+        return self.attn(x, x, x)[0]
+```
+
+R:
+
+```r
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
+---
+
+## Interactive Charts (Observable JS)
+
+```{ojs}
+//| label: fig-interactive
+//| fig-cap: "An interactive scatter plot. Drag the slider to filter."
+
+viewof threshold = Inputs.range([0, 100], {
+  value: 50,
+  step: 1,
+  label: "Filter threshold"
+})
+
+data = Array.from({length: 50}, (_, i) => ({
+  x: Math.random() * 100,
+  y: Math.random() * 100
+}))
+
+filtered = data.filter(d => d.x > threshold)
+
+Plot.plot({
+  marks: [
+    Plot.dot(filtered, {x: "x", y: "y", fill: "steelblue", opacity: 0.7})
+  ],
+  x: {label: "X →"},
+  y: {label: "↑ Y"},
+  style: {fontSize: 12}
+})
+```
+
+---
+
+## Plotly Interactive Chart
+
+```{python}
+#| label: fig-plotly
+#| fig-cap: "Interactive Plotly chart embedded in the article."
+
+import plotly.graph_objects as go
+import numpy as np
+
+x = np.linspace(0, 4*np.pi, 200)
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=x, y=np.sin(x), name="sin(x)", mode="lines"))
+fig.add_trace(go.Scatter(x=x, y=np.cos(x), name="cos(x)", mode="lines"))
+
+fig.update_layout(
+    template="simple_white",
+    height=350,
+    margin=dict(l=40, r=20, t=20, b=40),
+    legend=dict(orientation="h", yanchor="bottom", y=1.02),
+    xaxis_title="x",
+    yaxis_title="f(x)"
+)
+fig.show()
+```
+
+---
+
+## Wide Figure
+
+::: {.column-page}
+![A full-page-width figure demonstrating the `.column-page` layout class.](https://via.placeholder.com/1100x300/f8f8f8/999999?text=Wide+Figure+%E2%80%94+.column-page)
+:::
+
+---
+
+## Margin Figure
+
+::: {.column-margin}
+![A small diagram in the margin.](https://via.placeholder.com/200x150/f8f8f8/999999?text=Margin+Figure)
+
+**Figure 1:** A margin figure, anchored to the right of the body text on desktop screens.
+:::
+
+Margin figures are a signature feature of Distill. They allow you to place supplementary visual context alongside the relevant text without interrupting the reading flow.
+
+---
+
+## Footnotes
+
+Hover over the footnote reference to see it inline.[^1] This is the distill-style hover footnote behavior.[^2]
+
+[^1]: This footnote appears on hover thanks to Quarto's `footnotes-hover: true` setting.
+[^2]: Footnotes are automatically numbered and collected in the appendix.
+
+---
+
+## Citations
+
+The attention mechanism [@vaswani2017attention] has become foundational to modern deep learning. Generative models [@goodfellow2014generative] represent another major branch.
+
+Hover over the citation numbers to see the full reference inline.
+
+---
+
+## Callout Boxes
+
+::: {.callout-note}
+**Note:** This is a note callout. Use for supplementary information.
+:::
+
+::: {.callout-tip}
+**Tip:** This is a tip callout. Use for best practices and recommendations.
+:::
+
+::: {.callout-warning}
+**Warning:** This is a warning callout. Use for potential issues or caveats.
+:::
+
+::: {.callout-important}
+**Important:** This is an important callout. Use for critical information.
+:::
+
+---
+
+## Conclusion
+
+This post demonstrates the full range of features available in this Distill-style blog:
+
+- Margin notes and margin figures
+- Hover citations and footnotes
+- Math equations (KaTeX)
+- Interactive charts (Observable JS + Plotly)
+- Wide and full-page figures
+- Code blocks with syntax highlighting
+
+## Acknowledgments
+
+Thanks to the [Distill.pub](https://distill.pub) team for setting the standard for ML research communication, and to the [Quarto](https://quarto.org) team for building the modern infrastructure that makes this possible.
