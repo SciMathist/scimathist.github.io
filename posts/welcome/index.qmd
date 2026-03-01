@@ -12,7 +12,6 @@ bibliography: ../../references.bib
 citation: true
 image: preview.png
 draft: false
-jupyter: distill-blog 
 ---
 
 ## Introduction
