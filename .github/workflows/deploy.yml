@@ -56,7 +56,13 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: "1.4.549"
+          # don't pin to an older release that conflicts with the Ubuntu
+          # package cache. the runner already has a newer quarto in the
+          # apt repository, and trying to install 1.4.549 triggered
+          # "packages were downgraded" which apt refuses without
+          # --allow-downgrades. using the latest (or bumping to a more
+          # recent semver) avoids that error.
+          version: "latest"     # or a newer specific release, e.g. "1.5.88"
           tinytex: false
 
       # ── Restore notebook cache ────────────────────────────
